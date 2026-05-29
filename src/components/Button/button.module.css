@@ -1,0 +1,11 @@
+.button{
+    background-color: blueviolet;
+    display: block;
+    margin: 10px;
+    border-radius: 10px;
+    border: 0;
+    padding: 10px;
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
