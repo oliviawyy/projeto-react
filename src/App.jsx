@@ -1,11 +1,12 @@
 
-import './App.css'
+import Alunos from './components/Alunos/Alunos.jsx'
+
 
 function App() {
 
   return (
     <>
-      <h1 style={{backgroundColor: 'red'}}>Deu bom!</h1>
+     <Alunos></Alunos>
     </>
   )
 }

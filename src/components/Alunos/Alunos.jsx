@@ -1,6 +1,6 @@
+import styles from "./alunos.module.css"
 
-
-Alunos (){
+ function Alunos (){
     return(
         <>
         <p>Nome: test</p>
@@ -11,4 +11,4 @@ Alunos (){
 }
 
 
-export default Alunos()
+export default Alunos
