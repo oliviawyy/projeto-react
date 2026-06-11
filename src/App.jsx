@@ -4,21 +4,23 @@ import Button from './components/Button/Button.jsx'
 import Card from './components/Card/Card.jsx'
 import Lista from './components/Lista/Lista.jsx'
 import MsgUsuario from './components/MensagemUsuario/MsgUsuario.jsx'
+import UseStateHook from './components/UseStateHook/UseStatehook.jsx'
+
 
 function App() {
 
 
-  const objeto =
-  {
-    id: 1,
-    nome: 'João'
-  };
+  // const objeto =
+  // {
+  //   id: 1,
+  //   nome: 'João'
+  // };
 
-  const styles =
-  {
-    containerFrutas: 'classe-azul',
-    'container-legumes': 'classe-verde'
-  };
+  // const styles =
+  // {
+  //   containerFrutas: 'classe-azul',
+  //   'container-legumes': 'classe-verde'
+  // };
 
   return (
     <>
@@ -27,16 +29,18 @@ function App() {
       <Button></Button>
       <Card></Card>
       <Lista></Lista>
-      <MsgUsuario nomeUsuario={'SENAI'} />
-      <MsgUsuario autenticado={true} nomeUsuario={'SENAI'} />
 
-      <p>Ponto: {objeto.nome}</p>
-      <p>Colchetes: {objeto['nome']}</p>
-
-      <p></p>
+      <UseStateHook />
+      
 
     </>
   )
 }
+/* <p>Ponto: {objeto.nome}</p>
+      <p>Colchetes: {objeto['nome']}</p>
+
+      <p>Ponto: {styles.containerFrutas}</p>
+      <p>Colchetes: {styles['container-legumes']}</p> */
+
 
 export default App
