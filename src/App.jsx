@@ -31,7 +31,9 @@ function App() {
       <MsgUsuario autenticado={true} nomeUsuario={'SENAI'} />
 
       <p>Ponto: {objeto.nome}</p>
-      <p>Colchets</p>
+      <p>Colchetes: {objeto['nome']}</p>
+
+      <p></p>
 
     </>
   )
