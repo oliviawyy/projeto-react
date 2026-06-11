@@ -5,6 +5,7 @@ import Card from './components/Card/Card.jsx'
 import Lista from './components/Lista/Lista.jsx'
 import MsgUsuario from './components/MensagemUsuario/MsgUsuario.jsx'
 import UseStateHook from './components/UseStateHook/UseStatehook.jsx'
+import Contador from './components/Contador/Contador.jsx'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Lista></Lista>
 
       <UseStateHook />
+      <Contador></Contador>
       
 
     </>
