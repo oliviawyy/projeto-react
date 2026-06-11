@@ -5,6 +5,7 @@ import styles from "./button.module.css"
         <>
         <button className={styles.button}>Cadastro</button>
         <button className={styles.button}>Registro</button>
+
         </>
     )
 }
