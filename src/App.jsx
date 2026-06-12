@@ -25,13 +25,13 @@ function App() {
 
   return (
     <>
-      <Alunos nome={'olivia'} idade={16} ativo={true}></Alunos>
+      {/* <Alunos nome={'olivia'} idade={16} ativo={true}></Alunos>
       <Alunos nome={'ana'} idade={17} ativo={false}></Alunos>
       <Button></Button>
       <Card></Card>
       <Lista></Lista>
 
-      <UseStateHook />
+      <UseStateHook /> */}
       <Contador></Contador>
       
 
