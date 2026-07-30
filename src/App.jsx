@@ -6,6 +6,7 @@ import Lista from './components/Lista/Lista.jsx'
 import MsgUsuario from './components/MensagemUsuario/MsgUsuario.jsx'
 import UseStateHook from './components/UseStateHook/UseStatehook.jsx'
 import Contador from './components/Contador/Contador.jsx'
+import UseEffectHook from './components/UseEffectHook/UseEffectHook.jsx'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
 
       <UseStateHook /> */}
       <Contador></Contador>
+      <UseEffectHook />
       
 
     </>
