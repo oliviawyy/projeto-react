@@ -24,7 +24,7 @@
 .span {
     font-size: 5rem;
     font-weight: bold;
-    color: #65b2ff;
+    color: #8665ff;
     margin-bottom: 25px;
     transition: color 0.3s ease;
 
@@ -46,7 +46,7 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
-    background-color: #65b2ff;
+    background-color: #9365ff;
     color: #fcfeff;
 }
 
