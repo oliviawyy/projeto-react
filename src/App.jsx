@@ -34,9 +34,6 @@ function App() {
       <Lista></Lista>
 
       <UseStateHook /> */}
-      {/* <Contador></Contador>
-      <UseEffectHook />
-       */}
 
       <Tema />
       

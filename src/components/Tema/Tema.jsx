@@ -51,7 +51,7 @@ function Tema() {
         {/* caso 1: Contador */}
         <section className={styles.card}>
             <h1>1. Contador (useState)</h1>
-            <p>{contador}</p>
+            <p><strong>{contador}</strong></p>
             <button onClick={aumentarContador}>+</button>
             <button onClick={diminuirContador}>-</button>
             <p>O useEffect observa a variável <strong>contador</strong> e executa sempre que ela muda</p>
@@ -60,7 +60,7 @@ function Tema() {
 
         {/* caso 2: campo de texto */}
         <section className={styles.card}>
-            <h1>2. Campo de Texto</h1>
+            <h1>2. Campo de Texto (useState)</h1>
             <input 
                 type="text"
                 placeholder="Digite seu nome"
@@ -73,7 +73,7 @@ function Tema() {
         {/* caso 3: alternancia de tema */}
         <section className={styles.card}>
         <h1>3. Alternancia de Tema (useState)</h1>
-        <button onClick={alternarTema}>Alternar para {temaEscuro ? "Claro" : "Escuro"}</button>
+        <button  onClick={alternarTema}>Alternar para {temaEscuro ? "Claro" : "Escuro"}</button>
         <p>O useEffect observa a variável <strong>temaEscuro</strong> e executa sempre que o tema é alterado</p>
         </section>
         
