@@ -8,6 +8,8 @@ import UseStateHook from './components/UseStateHook/UseStatehook.jsx'
 import Contador from './components/Contador/Contador.jsx'
 import UseEffectHook from './components/UseEffectHook/UseEffectHook.jsx'
 import Tema from './components/Tema/Tema.jsx'
+import ConsultaApiBtn from './components/ConsultaApiBtn/ConsultaApiBtn.jsx'
+
 
 
 function App() {
@@ -35,7 +37,7 @@ function App() {
 
       <UseStateHook /> */}
 
-      <Tema />
+      <ConsultaApiBtn />
       
 
     </>
