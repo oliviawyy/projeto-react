@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./ConsultaApiBtn.module.css";
 import Swal from 'sweetalert2'
 
-function ConsultaApiBtn() {
+function ConsultaApiSa() {
 
     // estado para renderizae=r os usuarios no viewport
     const [usuarios, setUsuarios] = useState([]);
@@ -13,8 +13,7 @@ function ConsultaApiBtn() {
     // estado tratar o erro
     const [erro, setErro] = useState("");
 
-    // sweetalert2
-    const Swal = require('sweetalert2');
+
 
     // a busca é um manipulador de eventos (event handler).
     // ele garante previsibilidade
@@ -23,9 +22,18 @@ function ConsultaApiBtn() {
         setCarregando(true);
         setErro("");
 
+        Swal.fire({
+            title: "Carregando...",
+            text: "Seus dados estão sendo carregados",
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading()
+            }
+        });
+
         try {
             // Url para simular um erro interno do servidor (401 e 500)
-            // const resposta = await fetch("https://httpbin.org/status/401");
+            // const resposta = await fetch("https://httpbin.org/status/500");
 
             // consultar a API utilizando o metodo fetch --> resposta é uma promisse
             const resposta = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -35,42 +43,67 @@ function ConsultaApiBtn() {
 
                 // tratar erro interno do servidor (500)
                 if (resposta.status === 500) {
-                    throw new Error("Erro 500: O banco de dados ou servidor falhou.");
-                }
 
-                // tratar erro 401 (falta de autenticação)
+                    throw new Error("Erro 500: O banco de dados o servidor falhou")
+                }
                 if (resposta.status === 401) {
-                    throw new Error("Erro 401: Usuário não autorizado.");
+
+                    throw new Error("Erro 401: Usuário não autorizado.")
                 }
-
-                // tratar erro HTTP do servidor (URL 404)
-                throw new Error(`Erro ${resposta.status}: URL não encontrada ou inválida.`);
-
+                throw new Error(`Erro ${resposta.status}: URL não encontrada o inválida`)
             }
-
             // converter a resposta da API em json (ela erra uma promisse)
             const dados = await resposta.json();
             setUsuarios(dados);
-        }
 
+            Swal.fire({
+                title: "Sucesso",
+                text: "Seus dados foram carregados com sucesso",
+                icon: "success"
+            });
 
-        catch (error) {
-            console.log(error.message)
+            Swal.close();
+
+        } catch (error) {
             if (error.message === "Failed to fetch" || !navigator.onLine) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Algo deu errado!",
+                    text: "Não foi possível conectar ao servidor. Verifique sua conexão de internet.",
+                    showConfirmButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Tentar Novamente'
 
-                setErro("Não foi possível concectar ao servidor. Verifique sua internet.");
-
-
+                }).then((result) => {
+                    if(result.isConfirmed ){
+                        buscarUsuarios()
+                    }
+                })
+                
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Algo deu errado!",
+                    text: error.message,
+                    showConfirmButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Tentar Novamente'
+                }).then((result) => {
+                    if(result.isConfirmed ){
+                        buscarUsuarios()
+                    }
+                })
+                
             }
-            else {
-                setErro(error.message);
-            }
+
+
         }
         finally {
-            setCarregando(false);
-        }
 
+            setCarregando(false)
+        }
     }
+
 
     return (
         <main className={styles.container}>
@@ -89,17 +122,7 @@ function ConsultaApiBtn() {
 
                 <h2>Usuários da JSON Placeholder</h2>
 
-                {/* exibe mensagem de carregamento */}
-                {carregando && Swal.fire({
-                    title: "Sucesso!",
-                    text: "Usuários carregados com sucesso.",
-                    icon: "success"
-                })
 
-}
-
-                {/* exibe mensagem de erro */}
-                {erro && <p className={styles.erro}>{erro}</p>}
 
                 {/* exibe a lista de usuários */}
                 {!carregando && !erro && (
@@ -124,4 +147,5 @@ function ConsultaApiBtn() {
     )
 }
 
-export default ConsultaApiBtn
+
+export default ConsultaApiSa
