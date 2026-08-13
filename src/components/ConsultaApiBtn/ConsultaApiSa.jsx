@@ -60,6 +60,7 @@ function ConsultaApiSa() {
                 title: "Sucesso",
                 text: "Seus dados foram carregados com sucesso",
                 icon: "success"
+                
             });
 
             Swal.close();
