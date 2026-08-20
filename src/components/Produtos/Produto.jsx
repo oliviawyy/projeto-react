@@ -28,7 +28,7 @@ function Produto() {
             {/* o map serve para retornar sobre um lista e criar elementos para cada item */}
             {produto.map((produto) => (
                 <li key={produto.id} className={styles.item}>
-                    <img src={produto.fotos[0].src} alt={produto.fotos[0].titulo} />
+                    
                     <h2>{produto.nome}</h2>
                     <p>R${produto.preco}</p>
                     <p>Descrição: {produto.descricao}</p>

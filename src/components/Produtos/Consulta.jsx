@@ -1,36 +1,41 @@
-import { useState, useEffect } from 'react';
 
+
+import { useState, useEffect } from "react";
+import Produto from "./Produto";
 
 function Consulta() {
-    const [produto, setProduto] = useState([]);
-    async function buscarProdutos() {
-        const response = await fetch('https://ranekapi.origamid.dev/json/api/produto/');
-        const dados = await response.json()
-        setProduto(dados);
+  const [produto, setProduto] = useState(null);
+// Inserir o produto no Local Storage
+  useEffect(() => {
 
+    const produtoLocal = localStorage.getItem("produto");
+    if (produtoLocal !== null) setProduto(produtoLocal);
 
-    }
-    useEffect(() => {
-        buscarProdutos()
-    }, [])
+   
+  }, []);
+// Recuperar o produto do Local Storage quando o produto for modificado pelo estado
+  useEffect(() => {
+    if (produto !== null) localStorage.setItem("produto", produto);
+ }, [produto]);
 
-    return (
-        <div>
-            <h2>Produtos Disponiveis:</h2>
-            <button onClick={buscarProdutos}>Notebook</button>
-            <button onClick={buscarProdutos}>Smartphone</button>
-            <ul>
-                {produto.map((produto) => (
-                    <li className=''>
+// Extrair o texto do Botão quando o usuário clicar
+  function handleClick({ target }) {
+    setProduto(target.innerText);
+  }
 
-                    </li>))}
-                
-            </ul>
+  return (
+    <section>
+      <h1>Preferencia: {produto}</h1>
 
-        </div>
+      <button onClick={handleClick}>Notebook</button>
 
+      <button onClick={handleClick}>Smartphone</button>
 
+      <button onClick={handleClick}>Camera</button>
 
-    )
+      <Produto produto={produto} />
+    </section>
+  );
 }
-export default Consulta
+
+export default Consulta;
