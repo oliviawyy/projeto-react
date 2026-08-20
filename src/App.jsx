@@ -10,7 +10,8 @@ import UseEffectHook from './components/UseEffectHook/UseEffectHook.jsx'
 import Tema from './components/Tema/Tema.jsx'
 import ConsultaApiBtn from './components/ConsultaApiBtn/ConsultaApiBtn.jsx'
 import ConsultaApiSa from './components/ConsultaApiBtn/ConsultaApiSa.jsx'
-
+import Produto from './components/Produtos/Produto.jsx'
+import Consulta from './components/Produtos/Consulta.jsx'
 
 
 
@@ -39,7 +40,12 @@ function App() {
 
       <UseStateHook /> */}
 
-      <ConsultaApiSa></ConsultaApiSa>
+      {/* <ConsultaApiSa></ConsultaApiSa> */}
+
+      {/* <Produto></Produto> */}
+
+      <Consulta></Consulta>
+      
       
 
     </>
